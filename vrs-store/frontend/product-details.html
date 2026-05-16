@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VRS STORE - Premium Digital Marketplace. Gaming accounts, subscriptions, software keys, and AI tools with instant delivery.">
+  <meta name="keywords" content="digital marketplace, gaming accounts, Netflix, Spotify, Steam, Fortnite, CS2, Valorant, software keys, AI tools">
+  <meta name="author" content="VRS STORE">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="VRS STORE - Premium Digital Products">
+  <meta property="og:description" content="Trusted digital marketplace for gaming accounts, subscriptions, and software.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://vrsstore.com">
+  <meta property="og:image" content="./images/highlight_VrsStore.png">
+  <link rel="canonical" href="https://vrsstore.com/product-details.html">
+  <title>VRS STORE | Product Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/theme.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/data/products.js"></script>
+  <style>
+    /* Product Details Page Specific Styles */
+    .product-details-page {
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+
+    .product-details-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--cyber);
+    }
+
+    .breadcrumb-current {
+      color: var(--text-color);
+      font-weight: 600;
+    }
+
+    .product-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .product-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .product-image-section {
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      border: 1px solid var(--border-color);
+    }
+
+    .product-image {
+      max-width: 100%;
+      max-height: 350px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .product-icon-large {
+      font-size: 8rem;
+      color: var(--cyber);
+    }
+
+    .product-info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .product-title {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: var(--text-color);
+      margin: 0;
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .stars {
+      color: #FFC107;
+      font-size: 1.1rem;
+    }
+
+    .rating-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .product-price-section {
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      padding: 1.5rem;
+      border: 1px solid var(--border-color);
+    }
+
+    .price-display {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .current-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--cyber);
+    }
+
+    .original-price-large {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .discount-badge {
+      background: linear-gradient(135deg, #D4AF37, #E5C756);
+      color: #000;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #10B981;
+    }
+
+    .trust-badge.verified {
+      background: rgba(0, 163, 255, 0.12);
+      border-color: rgba(0, 163, 255, 0.3);
+      color: #00A3FF;
+    }
+
+    .trust-badge.instant {
+      background: rgba(212, 175, 55, 0.12);
+      border-color: rgba(212, 175, 55, 0.3);
+      color: #D4AF37;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-buy-large {
+      flex: 1;
+      min-width: 200px;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #00A3FF, #0077CC);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-buy-large:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 163, 255, 0.35);
+    }
+
+    .btn-contact {
+      padding: 1rem 2rem;
+      background: transparent;
+      color: var(--text-color);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-contact:hover {
+      border-color: var(--cyber);
+      color: var(--cyber);
+    }
+
+    /* Vendor Stats Section */
+    .vendor-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    @media (max-width: 480px) {
+      .vendor-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .stat-box {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      border: 1px solid var(--border-color);
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--cyber);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Product Details Tabs */
+    .product-details-tabs {
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .tab-header {
+      display: flex;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 1rem;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      color: var(--cyber);
+      border-bottom: 2px solid var(--cyber);
+    }
+
+    .tab-content {
+      padding: 2rem;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .detail-section {
+      margin-bottom: 2rem;
+    }
+
+    .detail-section h3 {
+      color: var(--cyber);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .detail-section p, .detail-section li {
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .detail-section ul {
+      padding-left: 1.5rem;
+    }
+
+    .detail-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Warranty Box */
+    .warranty-box {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .warranty-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .warranty-header i {
+      font-size: 1.5rem;
+      color: #10B981;
+    }
+
+    .warranty-header h4 {
+      margin: 0;
+      color: #10B981;
+      font-size: 1.1rem;
+    }
+
+    .warranty-box p {
+      color: var(--text-muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* GamerProtect Protocol */
+    .gamerprotect-section {
+      background: rgba(0, 243, 255, 0.05);
+      border: 1px solid rgba(0, 243, 255, 0.15);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .gamerprotect-item {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.75rem 0;
+    }
+
+    .gamerprotect-item:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+    }
+
+    .gamerprotect-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .escrow-icon {
+      background: rgba(0, 243, 255, 0.15);
+      color: #00f3ff;
+    }
+
+    .risk-icon {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10B981;
+    }
+
+    .risk-icon.high-risk {
+      background: rgba(239, 68, 68, 0.15);
+      color: #EF4444;
+    }
+
+    .warranty-icon {
+      background: rgba(212, 175, 55, 0.15);
+      color: #D4AF37;
+    }
+
+    .gamerprotect-content h4 {
+      margin: 0 0 0.25rem;
+      color: var(--text-color);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .gamerprotect-content p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .ban-risk-meter {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      margin-top: 0.5rem;
+      overflow: hidden;
+    }
+
+    .ban-risk-bar {
+      height: 100%;
+      background: #10B981;
+      border-radius: 4px;
+      transition: width 0.5s ease, background 0.5s ease;
+    }
+
+    .ban-risk-bar.medium {
+      background: #F59E0B;
+    }
+
+    .ban-risk-bar.high {
+      background: #EF4444;
+    }
+
+    /* Protocol Steps */
+    .protocol-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .protocol-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      background: var(--cyber);
+      color: #fff;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      margin: 0 0 0.25rem;
+      color: var(--text-color);
+      font-size: 1rem;
+    }
+
+    .step-content p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Stock Indicator */
+    .stock-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .stock-high {
+      background: rgba(16, 185, 129, 0.12);
+      color: #10B981;
+    }
+
+    .stock-medium {
+      background: rgba(255, 193, 7, 0.12);
+      color: #FFC107;
+    }
+
+    .stock-low {
+      background: rgba(255, 23, 68, 0.12);
+      color: #FF1744;
+    }
+
+    /* Technical Specs Table */
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .specs-table td {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .specs-table td:first-child {
+      color: var(--text-muted);
+      width: 40%;
+    }
+
+    .specs-table td:last-child {
+      color: var(--text-color);
+      font-weight: 600;
+    }
+
+    .specs-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Category Badge */
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.8rem;
+      background: rgba(0, 163, 255, 0.12);
+      border: 1px solid rgba(0, 163, 255, 0.3);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--cyber);
+      margin-bottom: 1rem;
+    }
+
+    /* Light Mode Overrides for Product Details */
+    body.light-mode .current-price {
+      color: #000000;
+    }
+
+    body.light-mode .trust-badge {
+      background: rgba(0, 200, 83, 0.12);
+      color: #006400;
+    }
+
+    body.light-mode .trust-badge.verified {
+      background: rgba(0, 113, 227, 0.12);
+      color: #004494;
+    }
+
+    body.light-mode .trust-badge.instant {
+      background: rgba(255, 193, 7, 0.15);
+      color: #856404;
+    }
+
+    body.light-mode .stat-value {
+      color: #000000;
+    }
+
+    body.light-mode .warranty-header h4,
+    body.light-mode .warranty-header i {
+      color: #006400;
+    }
+
+    body.light-mode .warranty-box {
+      background: rgba(0, 200, 83, 0.08);
+      border-color: rgba(0, 200, 83, 0.25);
+    }
+
+    body.light-mode .step-number {
+      background: #000000;
+    }
+
+    body.light-mode .btn-buy-large {
+      background: #000000;
+      color: #FFFFFF;
+    }
+
+    body.light-mode .btn-buy-large:hover {
+      background: #333333;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="./images/highlight_VrsStore.png" alt="VRS STORE" class="brand-logo">
+      <span class="brand-text">VRS <span class="brand-highlight">STORE</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="./index.html" class="nav-link">Home</a>
+      <a href="./index.html#products" class="nav-link">Products</a>
+      <a href="./index.html#support" class="nav-link">Support</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="ThemeManager.toggle()" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="currency-toggle" onclick="CurrencySwitcher.toggle()" aria-label="Toggle currency">
+        <span class="currency-label">IQD</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Product Details Page -->
+  <main class="product-details-page">
+    <div class="product-details-container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="./index.html">Home</a>
+        <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+        <a href="./index.html#products" id="breadcrumb-category">Category</a>
+        <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+        <span class="breadcrumb-current" id="breadcrumb-product">Product</span>
+      </nav>
+
+      <!-- Product Main Section -->
+      <div class="product-main">
+        <!-- Image Section -->
+        <div class="product-image-section">
+          <img id="product-image" src="" alt="" class="product-image" style="display: none;">
+          <div id="product-icon" class="product-icon-large">
+            <i class="fas fa-box"></i>
+          </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="product-info-section">
+          <span class="category-badge" id="product-category">
+            <i class="fas fa-tag"></i> Category
+          </span>
+          
+          <h1 class="product-title" id="product-title">Product Title</h1>
+          
+          <div class="product-rating">
+            <div class="stars" id="product-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="rating-text" id="product-rating-text">5.0 (0 reviews)</span>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="trust-badges">
+            <span class="trust-badge verified">
+              <i class="fas fa-badge-check"></i> Verified Vendor
+            </span>
+            <span class="trust-badge escrow">
+              <i class="fas fa-shield-halved"></i> VRS-Escrow Protected
+            </span>
+            <span class="trust-badge instant">
+              <i class="fas fa-bolt"></i> Instant Delivery
+            </span>
+          </div>
+
+          <!-- GamerProtect Protocol -->
+          <div class="gamerprotect-section">
+            <div class="gamerprotect-item">
+              <div class="gamerprotect-icon escrow-icon">
+                <i class="fas fa-shield-halved"></i>
+              </div>
+              <div class="gamerprotect-content">
+                <h4>Protected by VRS-Escrow</h4>
+                <p>Funds held for 72 hours until delivery is confirmed</p>
+              </div>
+            </div>
+            <div class="gamerprotect-item">
+              <div class="gamerprotect-icon risk-icon" id="ban-risk-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="gamerprotect-content">
+                <h4>Ban Risk: <span id="ban-risk-value">0.1%</span></h4>
+                <div class="ban-risk-meter">
+                  <div class="ban-risk-bar" id="ban-risk-bar"></div>
+                </div>
+              </div>
+            </div>
+            <div class="gamerprotect-item">
+              <div class="gamerprotect-icon warranty-icon">
+                <i class="fas fa-umbrella"></i>
+              </div>
+              <div class="gamerprotect-content">
+                <h4>Full Warranty: <span id="warranty-badge">30 Days</span></h4>
+                <p>Complete replacement guarantee</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price Section -->
+          <div class="product-price-section">
+            <div class="stock-indicator stock-high" id="stock-indicator">
+              <i class="fas fa-check-circle"></i> In Stock (15 available)
+            </div>
+            <div class="price-display" style="margin-top: 1rem;">
+              <span class="current-price" id="current-price">$0.00</span>
+              <span class="original-price-large" id="original-price" style="display: none;">$0.00</span>
+              <span class="discount-badge" id="discount-badge" style="display: none;">-0%</span>
+            </div>
+          </div>
+
+          <!-- Vendor Stats -->
+          <div class="vendor-stats">
+            <div class="stat-box">
+              <div class="stat-value" id="stat-sold">0</div>
+              <div class="stat-label">Sold</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value" id="stat-warranty">0</div>
+              <div class="stat-label">Days Warranty</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value" id="stat-stock">0</div>
+              <div class="stat-label">In Stock</div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="product-actions">
+            <button class="btn-buy-large" onclick="ProductDetails.buyNow()">
+              <i class="fas fa-shopping-cart"></i> Buy Now
+            </button>
+            <button class="btn-contact" onclick="ProductDetails.openTicket()">
+              <i class="fas fa-headset"></i> Ask Question
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Details Tabs -->
+      <div class="product-details-tabs">
+        <div class="tab-header">
+          <button class="tab-btn active" data-tab="description">Description</button>
+          <button class="tab-btn" data-tab="specs">Technical Specs</button>
+          <button class="tab-btn" data-tab="warranty">Warranty & Returns</button>
+          <button class="tab-btn" data-tab="delivery">Delivery Protocol</button>
+        </div>
+        
+        <div class="tab-content">
+          <!-- Description Tab -->
+          <div class="tab-panel active" id="tab-description">
+            <div class="detail-section">
+              <h3><i class="fas fa-info-circle"></i> Product Description</h3>
+              <p id="description-text">Loading product description...</p>
+            </div>
+            <div class="detail-section">
+              <h3><i class="fas fa-list-check"></i> What's Included</h3>
+              <ul id="included-list">
+                <li>Full account access with credentials</li>
+                <li>Step-by-step setup guide</li>
+                <li>24/7 customer support</li>
+                <li>Warranty coverage as specified</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Specs Tab -->
+          <div class="tab-panel" id="tab-specs">
+            <div class="detail-section">
+              <h3><i class="fas fa-microchip"></i> Technical Specifications</h3>
+              <table class="specs-table">
+                <tbody id="specs-table-body">
+                  <tr>
+                    <td>Category</td>
+                    <td id="spec-category">-</td>
+                  </tr>
+                  <tr>
+                    <td>Access Level</td>
+                    <td id="spec-access">Full Access</td>
+                  </tr>
+                  <tr>
+                    <td>Delivery Method</td>
+                    <td id="spec-delivery">Instant Digital</td>
+                  </tr>
+                  <tr>
+                    <td>Warranty Period</td>
+                    <td id="spec-warranty">-</td>
+                  </tr>
+                  <tr>
+                    <td>Account Status</td>
+                    <td id="spec-status">Verified & Clean</td>
+                  </tr>
+                  <tr>
+                    <td>Ban Risk</td>
+                    <td id="spec-risk">0.1%</td>
+                  </tr>
+                  <tr>
+                    <td>Verified Source</td>
+                    <td id="spec-source">VRS Verified Partner</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Warranty Tab -->
+          <div class="tab-panel" id="tab-warranty">
+            <div class="warranty-box">
+              <div class="warranty-header">
+                <i class="fas fa-shield-check"></i>
+                <h4>Full Warranty Coverage</h4>
+              </div>
+              <p id="warranty-text">This product comes with our standard warranty protection. If you encounter any issues within the warranty period, contact our support team immediately for a replacement or refund.</p>
+            </div>
+            
+            <div class="detail-section">
+              <h3><i class="fas fa-file-shield"></i> Warranty Terms</h3>
+              <ul>
+                <li><strong>Full Replacement:</strong> If the product stops working or gets banned within the warranty period, we provide a full replacement at no extra cost.</li>
+                <li><strong>24/7 Support:</strong> Our team is available around the clock to assist with any issues or questions.</li>
+                <li><strong>No Questions Asked:</strong> For warranty claims within the first 24 hours, we process replacements immediately.</li>
+                <li><strong>Account Protection:</strong> We guarantee that all accounts are verified clean before delivery.</li>
+              </ul>
+            </div>
+            
+            <div class="detail-section">
+              <h3><i class="fas fa-rotate-left"></i> Return Policy</h3>
+              <p>Due to the digital nature of our products, returns are only accepted if:</p>
+              <ul>
+                <li>The product was never delivered or accessed</li>
+                <li>The product is defective or not as described</li>
+                <li>Claim is made within the warranty period</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Delivery Protocol Tab -->
+          <div class="tab-panel" id="tab-delivery">
+            <div class="detail-section">
+              <h3><i class="fas fa-truck-fast"></i> Instant Delivery Process</h3>
+              <div class="protocol-steps" id="protocol-steps">
+                <div class="protocol-step">
+                  <div class="step-number">1</div>
+                  <div class="step-content">
+                    <h4>Complete Purchase</h4>
+                    <p>Click "Buy Now" and proceed to payment via our secure checkout.</p>
+                  </div>
+                </div>
+                <div class="protocol-step">
+                  <div class="step-number">2</div>
+                  <div class="step-content">
+                    <h4>Receive Credentials</h4>
+                    <p>Your product details and access credentials will be delivered instantly via email and on-screen display.</p>
+                  </div>
+                </div>
+                <div class="protocol-step">
+                  <div class="step-number">3</div>
+                  <div class="step-content">
+                    <h4>Login & Verify</h4>
+                    <p>Follow the provided instructions to access your product and verify everything works correctly.</p>
+                  </div>
+                </div>
+                <div class="protocol-step">
+                  <div class="step-number">4</div>
+                  <div class="step-content">
+                    <h4>Enjoy & Contact Support if Needed</h4>
+                    <p>Start using your product! Our support team is available 24/7 for any assistance.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="detail-section">
+              <h3><i class="fas fa-lock"></i> Security Information</h3>
+              <ul>
+                <li>All credentials are encrypted during transmission</li>
+                <li>We recommend changing passwords immediately after first login</li>
+                <li>Enable 2FA where available for maximum security</li>
+                <li>Never share your credentials with third parties</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/utils/assets.js"></script>
+  <script src="./js/utils/themeManager.js"></script>
+  <script src="./js/utils/currencySwitcher.js"></script>
+  <script>
+    // Product Details Manager
+    window.ProductDetails = {
+      product: null,
+
+      init() {
+        // Load product from localStorage (entire object) or URL params (fallback)
+        const savedProduct = localStorage.getItem('selectedProduct');
+        
+        if (savedProduct) {
+          try {
+            this.product = JSON.parse(savedProduct);
+          } catch (e) {
+            console.error('Failed to parse saved product:', e);
+            this.product = null;
+          }
+        }
+        
+        // Fallback: Load from URL params or localStorage ID
+        if (!this.product) {
+          const urlParams = new URLSearchParams(window.location.search);
+          const productId = urlParams.get('id') || localStorage.getItem('selectedProductId');
+          
+          if (productId && typeof VRS_SEED_PRODUCTS !== 'undefined') {
+            this.product = VRS_SEED_PRODUCTS.find(p => p.id === productId);
+          }
+        }
+        
+        // Fallback product for demo
+        if (!this.product) {
+          this.product = {
+            id: 'demo',
+            name: 'Premium Gaming Account',
+            title: 'Premium Gaming Account',
+            description: 'High-tier gaming account with exclusive skins and maximum rank. Perfect for players who want to jump straight into competitive play.',
+            category: 'gaming',
+            subCategory: 'fortnite',
+            parentCategory: 'gaming',
+            childCategory: 'fortnite',
+            price: 175000,
+            currentPriceIQD: 175000,
+            originalPrice: 240000,
+            oldPriceIQD: 240000,
+            discount: 27,
+            rating: 4.7,
+            reviewCount: 134,
+            salesCount: 312,
+            stockCount: 15,
+            warrantyDays: 30,
+            accessLevel: 'Full Access (Email + Epic)',
+            banRisk: '0.2%',
+            banProbability: '0.2%',
+            loginProtocol: 'Epic Games login with email change capability',
+            verifiedSource: 'Verified Fortnite Trader',
+            iconClass: 'fa-crosshairs',
+            image: './images/game.png',
+            asset: 'game.png'
+          };
+        }
+        
+        this.renderProduct();
+        this.bindTabEvents();
+      },
+
+      renderProduct() {
+        const p = this.product;
+
+        // Normalize product fields for backward compatibility
+        const productName = p.name || p.title;
+        const productCategory = p.category || p.parentCategory;
+        const productSubCategory = p.subCategory || p.childCategory;
+        const currentPrice = p.currentPriceIQD || p.price;
+        const oldPrice = p.oldPriceIQD || p.originalPrice;
+        const banRisk = p.banRisk || p.banProbability;
+
+        // Update breadcrumb
+        document.getElementById('breadcrumb-category').textContent = this.formatCategory(productCategory);
+        document.getElementById('breadcrumb-product').textContent = productName;
+
+        // Update category badge
+        document.getElementById('product-category').innerHTML = `
+          <i class="fas fa-tag"></i> ${this.formatCategory(productCategory)}
+        `;
+
+        // Update title
+        document.getElementById('product-title').textContent = productName;
+        
+        // Update rating
+        const stars = this.renderStars(p.rating || 5);
+        document.getElementById('product-stars').innerHTML = stars;
+        document.getElementById('product-rating-text').textContent = 
+          `${p.rating || 5.0} (${p.reviewCount || 0} reviews)`;
+        
+        // Update image using centralized getAssetPath function
+        const imgEl = document.getElementById('product-image');
+        const iconEl = document.getElementById('product-icon');
+        let imageUrl = p.image;
+
+        try {
+          // Use centralized getAssetPath if no explicit image
+          if (!imageUrl && typeof getAssetPath === 'function') {
+            imageUrl = getAssetPath(p.name || p.title, p.description);
+          } else if (!imageUrl && p.asset) {
+            imageUrl = p.asset.startsWith('./images/') ? p.asset : `./images/${p.asset}`;
+          }
+
+          if (imageUrl) {
+            imgEl.src = imageUrl;
+            imgEl.alt = productName;
+            imgEl.style.display = 'block';
+            iconEl.style.display = 'none';
+            // Fallback on image load error
+            imgEl.onerror = function() {
+              this.style.display = 'none';
+              iconEl.style.display = 'block';
+              iconEl.innerHTML = `<i class="fas ${p.iconClass || 'fa-box'}"></i>`;
+            };
+          } else {
+            imgEl.style.display = 'none';
+            iconEl.style.display = 'block';
+            iconEl.innerHTML = `<i class="fas ${p.iconClass || 'fa-box'}"></i>`;
+          }
+        } catch (error) {
+          console.error('Error loading product image:', error);
+          imgEl.style.display = 'none';
+          iconEl.style.display = 'block';
+          iconEl.innerHTML = `<i class="fas ${p.iconClass || 'fa-box'}"></i>`;
+        }
+
+        // Update price with normalized fields
+        this.updatePriceDisplay({ ...p, price: currentPrice, originalPrice: oldPrice });
+        
+        // Update stock indicator
+        this.updateStockIndicator(p.stockCount);
+        
+        // Update stats
+        document.getElementById('stat-sold').textContent = (p.salesCount || 0).toLocaleString();
+        document.getElementById('stat-warranty').textContent = (p.warrantyDays || p.warrantyHours / 24 || 30) + ' Days';
+        document.getElementById('stat-stock').textContent = p.stockCount || '∞';
+        
+        // Update description
+        document.getElementById('description-text').textContent = p.description;
+
+        // Update specs with normalized fields
+        document.getElementById('spec-category').textContent = this.formatCategory(productCategory);
+        document.getElementById('spec-access').textContent = p.accessLevel || 'Full Access';
+        document.getElementById('spec-warranty').textContent = (p.warrantyDays || p.warrantyHours / 24 || 30) + ' Days';
+        document.getElementById('spec-risk').textContent = banRisk || '0.1%';
+        document.getElementById('spec-source').textContent = p.verifiedSource || 'VRS Verified';
+
+        // Update warranty text
+        const warrantyDays = p.warrantyDays || Math.floor((p.warrantyHours || 720) / 24);
+        document.getElementById('warranty-text').textContent =
+          `This product comes with a Full Warranty: ${warrantyDays} Days. If you encounter any issues within the warranty period, contact our support team immediately for a replacement or refund.`;
+
+        // Update GamerProtect Protocol
+        this.updateGamerProtect(p, warrantyDays, banRisk);
+
+        // Update protocol
+        const loginProtocol = p.loginProtocol || 'Direct credentials delivery via email';
+        document.getElementById('protocol-steps').innerHTML = `
+          <div class="protocol-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Purchase Complete</h4>
+              <p>Your order has been processed and confirmed.</p>
+            </div>
+          </div>
+          <div class="protocol-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Access Delivery</h4>
+              <p>${loginProtocol}</p>
+            </div>
+          </div>
+          <div class="protocol-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Verify & Secure</h4>
+              <p>Change passwords and enable 2FA immediately after first access.</p>
+            </div>
+          </div>
+        `;
+      },
+
+      updateGamerProtect(product, warrantyDays, banRisk) {
+        // Update warranty badge
+        document.getElementById('warranty-badge').textContent = warrantyDays + ' Days';
+
+        // Update ban risk meter
+        const riskValueEl = document.getElementById('ban-risk-value');
+        const riskBarEl = document.getElementById('ban-risk-bar');
+        const riskIconEl = document.getElementById('ban-risk-icon');
+
+        // Parse ban risk value
+        const riskPercent = parseFloat(banRisk?.replace('%', '')) || 0.1;
+
+        riskValueEl.textContent = banRisk || '0.1%';
+
+        // Set bar width and color based on risk level
+        riskBarEl.style.width = Math.min(riskPercent * 5, 100) + '%'; // Scale for visibility
+
+        riskBarEl.classList.remove('medium', 'high');
+        riskIconEl.classList.remove('high-risk');
+
+        if (riskPercent < 5) {
+          riskBarEl.style.background = '#10B981'; // Green
+        } else if (riskPercent < 20) {
+          riskBarEl.classList.add('medium');
+        } else {
+          riskBarEl.classList.add('high');
+          riskIconEl.classList.add('high-risk');
+        }
+      },
+
+      updatePriceDisplay(p) {
+        const isUSD = CurrencySwitcher?.currentCurrency === 'USD';
+        const rate = CurrencySwitcher?.rate || 1500;
+        
+        const currentEl = document.getElementById('current-price');
+        const originalEl = document.getElementById('original-price');
+        const discountEl = document.getElementById('discount-badge');
+        
+        if (isUSD) {
+          currentEl.textContent = '$' + (p.price / rate).toFixed(2);
+          if (p.originalPrice && p.originalPrice > p.price) {
+            originalEl.textContent = '$' + (p.originalPrice / rate).toFixed(2);
+            originalEl.style.display = 'inline';
+          }
+        } else {
+          currentEl.textContent = p.price.toLocaleString() + ' IQD';
+          if (p.originalPrice && p.originalPrice > p.price) {
+            originalEl.textContent = p.originalPrice.toLocaleString() + ' IQD';
+            originalEl.style.display = 'inline';
+          }
+        }
+        
+        if (p.discount && p.discount > 0) {
+          discountEl.textContent = `-${p.discount}%`;
+          discountEl.style.display = 'inline';
+        }
+      },
+
+      updateStockIndicator(stock) {
+        const el = document.getElementById('stock-indicator');
+        if (!stock || stock > 20) {
+          el.className = 'stock-indicator stock-high';
+          el.innerHTML = '<i class="fas fa-check-circle"></i> In Stock';
+        } else if (stock > 5) {
+          el.className = 'stock-indicator stock-medium';
+          el.innerHTML = `<i class="fas fa-exclamation-circle"></i> Only ${stock} left`;
+        } else {
+          el.className = 'stock-indicator stock-low';
+          el.innerHTML = `<i class="fas fa-fire"></i> Only ${stock} left - Low Stock`;
+        }
+      },
+
+      renderStars(rating) {
+        const full = Math.floor(rating);
+        const half = rating % 1 >= 0.5;
+        let html = '';
+        for (let i = 0; i < 5; i++) {
+          if (i < full) html += '<i class="fas fa-star"></i>';
+          else if (i === full && half) html += '<i class="fas fa-star-half-alt"></i>';
+          else html += '<i class="far fa-star"></i>';
+        }
+        return html;
+      },
+
+      formatCategory(cat) {
+        if (!cat) return 'General';
+        return cat.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      },
+
+      bindTabEvents() {
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const tabId = btn.dataset.tab;
+            
+            // Update buttons
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Update panels
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+          });
+        });
+      },
+
+      buyNow() {
+        if (this.product) {
+          sessionStorage.setItem('selectedProduct', JSON.stringify(this.product));
+          window.location.href = './index.html?action=checkout';
+        }
+      },
+
+      openTicket() {
+        window.open('https://discord.gg/XNVFmg54Vq', '_blank');
+      }
+    };
+
+    // Currency Switcher
+    window.CurrencySwitcher = {
+      currentCurrency: 'IQD',
+      rate: 1310,
+
+      init() {
+        const saved = localStorage.getItem('vrs_currency');
+        if (saved) {
+          this.currentCurrency = saved;
+        }
+        this.updateUI();
+      },
+
+      toggle() {
+        this.currentCurrency = this.currentCurrency === 'IQD' ? 'USD' : 'IQD';
+        localStorage.setItem('vrs_currency', this.currentCurrency);
+        this.updateUI();
+        ProductDetails.renderProduct();
+      },
+
+      updateUI() {
+        document.querySelector('.currency-label').textContent = this.currentCurrency;
+      }
+    };
+
+    // Theme Manager
+    window.ThemeManager = {
+      init() {
+        const saved = localStorage.getItem('vrs_theme');
+        if (saved === 'light') {
+          document.body.classList.add('light-mode');
+        }
+        this.updateIcon();
+      },
+
+      toggle() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        localStorage.setItem('vrs_theme', isLight ? 'light' : 'dark');
+        this.updateIcon();
+      },
+
+      updateIcon() {
+        const icon = document.querySelector('.theme-toggle i');
+        if (document.body.classList.contains('light-mode')) {
+          icon.className = 'fas fa-sun';
+        } else {
+          icon.className = 'fas fa-moon';
+        }
+      }
+    };
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      ThemeManager.init();
+      CurrencySwitcher.init();
+      ProductDetails.init();
+    });
+  </script>
+</body>
+</html>

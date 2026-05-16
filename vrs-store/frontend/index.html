@@ -1,0 +1,363 @@
+PCFET0NUWV<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VRS STORE | Digital Marketplace</title>
+  <meta name="description" content="VRS STORE is a premium digital marketplace for gaming keys, secure cyber bundles, subscriptions, AI agents, scripts, web services, and private accounts.">
+  <meta name="keywords" content="VRS STORE, digital marketplace, gaming keys, premium subscriptions, AI agents, scripts, cyber hub, private accounts">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="VRS STORE | Digital Marketplace">
+  <meta property="og:description" content="A G2A-core digital marketplace with Obsidian and Gold branding.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.88em' font-size='86'%3EV%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div id="loader" class="loader" role="status" aria-label="Loading VRS STORE">
+  <div class="lc">
+    <div class="ll">VRS <span>STORE</span></div>
+    <div class="lb"><div class="lp" id="lp"></div></div>
+    <div class="ld"><div></div><div></div><div></div></div>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Shopping cart">
+  <div class="cart-head">
+    <div>
+      <span class="eyebrow">Checkout</span>
+      <h3><i class="fas fa-bag-shopping"></i> Secure Cart</h3>
+    </div>
+    <button class="icon-btn" onclick="Cart.close()" aria-label="Close cart">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot" id="cartFoot" style="display:none;">
+    <div id="cartCouponWrap"></div>
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cartTotal">0 IQD</strong>
+    </div>
+    <button class="btn btn-primary btn-block" onclick="Payment.open()">
+      <i class="fas fa-credit-card"></i> Continue to Payment
+    </button>
+  </div>
+</aside>
+
+<div class="modal-overlay" id="loginModal" role="dialog" aria-modal="true" aria-label="Account access">
+  <div class="modal">
+    <button class="modal-close" onclick="Auth.closeModal()" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="modal-logo">VRS <span>STORE</span></div>
+    <p class="modal-sub">Access your marketplace wallet, orders, and private drops.</p>
+    <div class="modal-tabs">
+      <button class="modal-tab active" data-tab="login" onclick="Auth.switchTab('login')">Login</button>
+      <button class="modal-tab" data-tab="register" onclick="Auth.switchTab('register')">Register</button>
+    </div>
+
+    <div id="loginForm">
+      <div class="form-group">
+        <label for="loginUser">Username or email</label>
+        <input type="text" id="loginUser" placeholder="username or email" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="loginPass">Password</label>
+        <input type="password" id="loginPass" placeholder="Minimum 8 characters" autocomplete="current-password">
+        <div class="form-error" id="loginErr" role="alert"></div>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="Auth.doLogin()">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+      <p class="modal-footer-text">New here?
+        <a href="#" onclick="Auth.switchTab('register');return false;">Create an account</a>
+      </p>
+    </div>
+
+    <div id="registerForm" style="display:none;">
+      <div class="form-group">
+        <label for="regUser">Username</label>
+        <input type="text" id="regUser" placeholder="username" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" placeholder="email@example.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="regPass">Password</label>
+        <input type="password" id="regPass" placeholder="Minimum 8 characters" autocomplete="new-password">
+        <div class="form-error" id="regErr" role="alert"></div>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="Auth.doRegister()">
+        <i class="fas fa-user-plus"></i> Create Account
+      </button>
+      <p class="modal-footer-text">Already registered?
+        <a href="#" onclick="Auth.switchTab('login');return false;">Login</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar" id="navbar" role="navigation" aria-label="Primary navigation">
+  <div class="nav-left">
+    <button class="nav-burger" id="categorySidebarToggle" aria-label="Open category sidebar" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+    <a href="#home" class="nav-logo">
+      <div class="logo-icon">V</div>
+      <span>VRS <span style="color: #00f3ff;">STORE</span></span>
+    </a>
+    <button class="mega-trigger" id="megaTrigger" aria-expanded="false">
+      <i class="fas fa-layer-group"></i>
+      Categories
+      <i class="fas fa-chevron-down"></i>
+    </button>
+  </div>
+
+  <div class="nav-search">
+    <div class="search-wrap">
+      <i class="fas fa-magnifying-glass search-icon" aria-hidden="true"></i>
+      <input type="text" id="searchInput" placeholder="Search keys, scripts, agents, subscriptions..." autocomplete="off" aria-label="Search products">
+      <button id="searchClear" class="search-clear" style="display:none;" title="Clear search" aria-label="Clear search">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <a href="#products" class="nav-link">Marketplace</a>
+    <a href="#flash" class="nav-link">Flash Deals</a>
+    <button class="cart-btn" id="cartBtn" title="Cart" onclick="Cart.open()" aria-label="Open shopping cart">
+      <i class="fas fa-cart-shopping"></i>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="currency-btn" id="currencyBtn" title="Toggle Currency" aria-label="Toggle Currency">
+      <span id="currencyLabel">IQD</span>
+    </button>
+    <div id="authBtn"></div>
+    <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">
+      <i class="fas fa-moon"></i>
+    </button>
+    <button class="mobile-btn" id="mobileBtn" aria-label="Open mobile menu" aria-expanded="false">
+      <i class="fas fa-ellipsis-vertical"></i>
+    </button>
+  </div>
+
+  <div class="mega-menu" id="megaMenu" aria-label="Product mega menu">
+    <div class="mega-grid" id="megaGrid"></div>
+  </div>
+</nav>
+
+<aside class="category-sidebar" id="categorySidebar" aria-label="Product taxonomy">
+  <div class="category-sidebar-head">
+    <div>
+      <span class="eyebrow">V4.0 Taxonomy</span>
+      <strong>Browse Categories</strong>
+    </div>
+    <button class="icon-btn" id="categorySidebarClose" aria-label="Close category sidebar">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="category-sidebar-body" id="categorySidebarBody"></div>
+</aside>
+<div class="category-sidebar-overlay" id="categorySidebarOverlay"></div>
+
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="#home"><i class="fas fa-house"></i> Home</a>
+  <a href="#categories"><i class="fas fa-grip"></i> Categories</a>
+  <a href="#flash"><i class="fas fa-bolt"></i> Flash Deals</a>
+  <a href="#products"><i class="fas fa-store"></i> Marketplace</a>
+  <a href="#support"><i class="fas fa-headset"></i> Support</a>
+</div>
+
+<main>
+  <section id="home" class="hero-shell">
+    <div class="hero-slider" id="heroSlider" aria-label="Featured deals">
+      <article class="hero-slide active" data-slide="0">
+        <div class="hero-copy">
+          <span class="hero-kicker"><i class="fas fa-crown"></i> VRS STORE</span>
+          <h1>Obsidian-grade digital deals, built for fast checkout.</h1>
+          <p>Gaming keys, premium subscriptions, AI builds, private accounts, and secure-ticket cyber bundles in one modular marketplace.</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary"><i class="fas fa-bag-shopping"></i> Shop Marketplace</a>
+            <button class="btn btn-glass" onclick="Navbar.selectCategory('gaming_zone')"><i class="fas fa-gamepad"></i> Gaming Zone</button>
+          </div>
+        </div>
+        <div class="hero-deal-panel">
+          <span class="deal-ribbon">Featured Deal</span>
+          <i class="fas fa-key hero-panel-icon"></i>
+          <h2>Steam/Xbox/PSN Key Drop</h2>
+          <p>Curated global key stock with instant order routing.</p>
+          <div class="hero-price">45,000 IQD</div>
+        </div>
+      </article>
+
+      <article class="hero-slide" data-slide="1">
+        <div class="hero-copy">
+          <span class="hero-kicker"><i class="fas fa-shield-halved"></i> Secure Ticket Flow</span>
+          <h1>Cyber Hub products move through private Discord tickets.</h1>
+          <p>High-sensitivity Cyber Hub and custom AI orders trigger secure ticket prompts for manual verification and n8n automation.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="Navbar.selectCategory('cyber_hub')"><i class="fas fa-shield"></i> Open Cyber Hub</button>
+            <button class="btn btn-glass" onclick="Navbar.selectCategory('custom_ai_agents')"><i class="fas fa-robot"></i> Custom AI</button>
+          </div>
+        </div>
+        <div class="hero-deal-panel">
+          <span class="deal-ribbon">Ticket Only</span>
+          <i class="fas fa-user-shield hero-panel-icon"></i>
+          <h2>Red Team Operator Pack</h2>
+          <p>Private fulfillment with secure audit trail.</p>
+          <div class="hero-price">125,000 IQD</div>
+        </div>
+      </article>
+
+      <article class="hero-slide" data-slide="2">
+        <div class="hero-copy">
+          <span class="hero-kicker"><i class="fas fa-wand-magic-sparkles"></i> Premium Stack</span>
+          <h1>Subscriptions, tools, and services with one clean cart.</h1>
+          <p>Use VIRUS2026 for a verified 15% discount across the frontend and backend order engine.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="Navbar.selectCategory('premium_subs')"><i class="fas fa-ticket"></i> Premium Subs</button>
+            <a href="#flash" class="btn btn-glass"><i class="fas fa-stopwatch"></i> Flash Deals</a>
+          </div>
+        </div>
+        <div class="hero-deal-panel">
+          <span class="deal-ribbon">Coupon Live</span>
+          <i class="fas fa-percent hero-panel-icon"></i>
+          <h2>VIRUS2026</h2>
+          <p>Apply 15% off eligible cart totals.</p>
+          <div class="hero-price">15% OFF</div>
+        </div>
+      </article>
+
+      <div class="hero-controls">
+        <button class="hero-nav" id="heroPrev" aria-label="Previous featured deal"><i class="fas fa-chevron-left"></i></button>
+        <div class="hero-dots" id="heroDots"></div>
+        <button class="hero-nav" id="heroNext" aria-label="Next featured deal"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="flash" class="market-band">
+    <div class="section-head compact">
+      <div>
+        <span class="eyebrow"><i class="fas fa-bolt"></i> Flash Deals</span>
+        <h2>Limited-window marketplace drops</h2>
+      </div>
+      <div class="countdown" id="flashCountdown" aria-label="Flash deal countdown">
+        <span>06</span><small>H</small>
+        <span>00</span><small>M</small>
+        <span>00</span><small>S</small>
+      </div>
+    </div>
+    <div class="flash-scroller" id="flashTrack" aria-label="Flash deals"></div>
+  </section>
+
+  <section id="categories" class="category-glance">
+    <div class="section-head compact">
+      <div>
+        <span class="eyebrow"><i class="fas fa-layer-group"></i> Categories at a Glance</span>
+        <h2>Five parent paths, strict child isolation</h2>
+      </div>
+      <button class="btn btn-glass" onclick="Navbar.openCategorySidebar()">
+        <i class="fas fa-sliders"></i> Open Sidebar
+      </button>
+    </div>
+    <div class="glance-row" id="categoryGlanceRow"></div>
+  </section>
+
+  <section id="products" class="products-section">
+    <div class="products-toolbar">
+      <div>
+        <nav class="breadcrumbs" id="breadcrumbTrail" aria-label="Breadcrumbs">
+          <button onclick="ProductList.clearFilters()">Home</button>
+          <span><i class="fas fa-chevron-right"></i></span>
+          <strong>Marketplace</strong>
+        </nav>
+        <h2>Digital Marketplace</h2>
+      </div>
+      <div class="toolbar-actions">
+        <select id="sortSelect" class="sort-select" aria-label="Sort products">
+          <option value="newest">Newest</option>
+          <option value="popular">Most Popular</option>
+          <option value="rating">Highest Rated</option>
+          <option value="price_asc">Price: Low to High</option>
+          <option value="price_desc">Price: High to Low</option>
+        </select>
+        <button class="btn btn-glass" onclick="Navbar.openCategorySidebar()">
+          <i class="fas fa-filter"></i> Filters
+        </button>
+      </div>
+    </div>
+
+    <div class="active-filter-strip" id="activeFilterStrip"></div>
+    <div class="products-grid" id="prodsGrid" role="list"></div>
+    <div id="paginationWrap" class="pagination-wrap"></div>
+  </section>
+
+  <section id="support" class="support-band">
+    <div class="support-copy">
+      <span class="eyebrow"><i class="fas fa-headset"></i> Secure Fulfillment</span>
+      <h2>Manual review where it matters. Fast cart flow everywhere else.</h2>
+      <p>Cyber Hub and Custom AI orders open a secure Discord ticket prompt. Standard marketplace products continue through the cart, coupon, and payment flow.</p>
+    </div>
+    <div class="support-actions">
+      <a class="btn btn-discord" href="https://discord.gg/XNVFmg54Vq" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-discord"></i> Discord
+      </a>
+      <a class="btn btn-telegram" href="https://t.me/VrsStoree" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-telegram"></i> Telegram
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a href="#home" class="footer-logo">VRS <span>STORE</span></a>
+  <p>Obsidian and Gold digital marketplace architecture.</p>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#products">Marketplace</a>
+    <a href="#flash">Flash Deals</a>
+    <a href="#support">Support</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 VRS STORE. All rights reserved.</p>
+</footer>
+
+<script src="config.js"></script>
+<script src="js/store/state.js"></script>
+<script src="js/store/auth.js"></script>
+<script src="js/store/cart.js"></script>
+<script src="js/api/client.js"></script>
+<script src="js/api/endpoints.js"></script>
+<script src="js/utils/assets.js"></script>
+<script src="js/utils/currencyConverter.js"></script>
+<script src="js/utils/discountSystem.js"></script>
+<script src="js/components/Toast.js"></script>
+<script src="js/components/Navbar.js"></script>
+<script src="js/data/products.js"></script>
+<script src="js/components/ProductCard.js"></script>
+<script src="js/components/Filters.js"></script>
+<script src="js/components/Search.js"></script>
+<script src="js/components/Cart.js"></script>
+<script src="js/components/Auth.js"></script>
+<script src="js/components/UserPanel.js"></script>
+<script src="js/components/AdminPanel.js"></script>
+<script src="js/components/Payment.js"></script>
+<script src="js/app.js"></script>
+<script>document.title = 'VRS STORE | Digital Marketplace';</script>
+
+</body>
+</html>
